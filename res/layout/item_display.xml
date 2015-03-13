@@ -5,7 +5,7 @@
     android:orientation="horizontal" >
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btn_logo"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:text="图片" />
@@ -16,7 +16,7 @@
         android:layout_weight="1.48">
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
@@ -27,24 +27,23 @@
             android:text="上海利民水暖" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_des"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/textView1"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_below="@+id/textView1"
             android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
             android:maxLines="2"
-            android:text="上海利民水暖成立于99年，16年专注于未市民服务" />
+            android:text="上海利民水暖成立于99年，16年专注于为市民服务" />
 
     </RelativeLayout>
 
     <Button
         android:id="@+id/btn_forward"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginRight="0dp"
-        android:text=" 查看" />
+        android:background="@drawable/telephone" />
 
 </LinearLayout>

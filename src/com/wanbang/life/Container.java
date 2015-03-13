@@ -2,11 +2,13 @@ package com.wanbang.life;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 
@@ -18,6 +20,7 @@ public class Container extends FragmentActivity {
 	private Button btn_indi;
 	private Button btn_more;
 	
+	private Button btn1;
 	
 	
 	@Override
@@ -27,7 +30,7 @@ public class Container extends FragmentActivity {
 	}
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState)  {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -46,6 +49,8 @@ public class Container extends FragmentActivity {
 		ft.add(R.id.fragment,mainpageFragment,"MainPage");
 		ft.commit();
 		
+		
+
 	}
 
 	private View.OnClickListener fragmentClick = new View.OnClickListener() {
@@ -66,11 +71,12 @@ public class Container extends FragmentActivity {
 					accountFragment = new AccountFragment();
 				}
 				ft.replace(R.id.fragment, accountFragment);
-				ft.addToBackStack(null);
+//				ft.addToBackStack(null);
 				ft.commit();
 				break;
 			case R.id.btn_main:
 				ft.replace(R.id.fragment, mainpageFragment);
+
 				ft.commit();
 			}
 		}
@@ -85,6 +91,14 @@ public class Container extends FragmentActivity {
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
+	}
+
+	
+	public void showResult(String title)
+	{
+		Intent it  = new Intent(this,DisplayResult.class);
+		it.putExtra("title", title);
+		startActivity(it);
 	}
 	
 	
